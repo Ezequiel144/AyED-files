@@ -6,19 +6,20 @@ using namespace std;
 
 int main()
 {
-    FILE *f;
-    f = fopen("data.txt", "r");
-    char dateF;
-    if (f != NULL)
-    {
-        return -1;
-    }
-    dateF = fgetc(f);
 
-    while (!feof(f))
+    FILE *arc;
+    char c[100];
+    arc = fopen("data.txt", "w");
+    if (arc == NULL)
+        cout << "error";
+    else
     {
-        cout << dateF << endl;
-        dateF = fgetc(f);
+        cout << "Se puedo ingresar al archivo" << endl;
+        cout << "Escribir algo de texto: ";
+        cin.getline(c,100);
+        fputs(c,arc);
+        cout << "Lo que se escribio fue: " << c << endl;
+        fclose(arc);
     }
 
     return 0;
