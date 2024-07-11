@@ -1,0 +1,1 @@
+leyendo lo que esta dentro del archivo READ.TXT
