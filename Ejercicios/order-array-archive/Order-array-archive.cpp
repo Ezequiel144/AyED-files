@@ -25,6 +25,19 @@ int main()
     sort(alumns,realDimArray);
     cout << "- Mostrando vector ordenado -" << endl;
     showArray(alumns, realDimArray);
+    fclose(arch);
+
+    //-> escribiendo nuevo archivo//
+
+    FILE * archWrite = fopen("Parcial-1-order.dat","wb");
+    Parcial alumn;
+
+    for (int i = 0; i < realDimArray; i++)
+    {
+        fwrite(&alumns[i],sizeof(Parcial),1,archWrite);
+    }
+    fclose(archWrite);
+
     return 0;
 }
 
